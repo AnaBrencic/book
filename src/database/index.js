@@ -1,5 +1,7 @@
-const Sequelize = require('sequelize');
-const dbConfig = require('../config/database.js');
+'use strict'
+
+import Sequelize from 'sequelize';
+import dbConfig from '../config/database.js';
 
 const database = new Sequelize(dbConfig);
 
@@ -10,4 +12,4 @@ database.authenticate().then(() => {
 });
 
 
-module.exports = database;
+export default database;

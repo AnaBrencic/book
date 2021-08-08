@@ -1,10 +1,11 @@
 {
   "name": "book-nodejs",
+  "type": "module",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "dev": "nodemon src/server.js",
+    "dev": "nodemon --exec babel-node --ignore node_modules src/server.js",
     "start": "node src/server.js"
   },
   "engines": {
@@ -17,6 +18,9 @@
     "sequelize": "^6.6.5"
   },
   "devDependencies": {
+    "@babel/core": "^7.15.0",
+    "@babel/node": "^7.14.9",
+    "@babel/preset-env": "^7.15.0",
     "nodemon": "^2.0.12",
     "sequelize-cli": "^6.2.0"
   }

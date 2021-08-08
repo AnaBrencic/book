@@ -1,17 +1,22 @@
-const express = require('express');
-const routes = require('./routes/index.js');
+'use strict'
+
+import express, { json, urlencoded } from 'express';
+import routes from './routes/index.js';
+import dotenv from 'dotenv';
+import './server.js';
+import '../src/database/index.js';
+
+
 const app = express();
-require('./server.js');
-require('../src/database/index.js');
-require('dotenv').config();
 
+dotenv.config();
 
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+app.use(json());
+app.use(urlencoded({ extended: true }));
 
 app.use(routes)
 
 app.set('port', process.env.PORT);
 
 
-module.exports = app;
+export default app;
