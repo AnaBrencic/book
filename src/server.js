@@ -1,3 +1,3 @@
-import app from './app.js';
+import app from './app.js'
 
-app.listen(app.get('port'), () => console.log('Server is running!'));
+app.listen(app.get('port'), () => console.log('Server is running!'))

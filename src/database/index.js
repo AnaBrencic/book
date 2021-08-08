@@ -1,15 +1,14 @@
 'use strict'
 
-import Sequelize from 'sequelize';
-import dbConfig from '../config/database.js';
+import Sequelize from 'sequelize'
+import dbConfig from '../config/database.js'
 
-const database = new Sequelize(dbConfig);
+const database = new Sequelize(dbConfig)
 
 database.authenticate().then(() => {
-    console.log('Connected to the database!')
+  console.log('Connected to the database!')
 }).catch((err) => {
-    console.log('Erro' +err)
-});
+  console.log('Erro' + err)
+})
 
-
-export default database;
+export default database
