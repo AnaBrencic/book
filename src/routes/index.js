@@ -1,10 +1,16 @@
 'use strict'
 
-import Router from 'express'
+const Router = require('express')
+
+const BookController = require('../controllers/BookController.js')
+const QuoteController = require('../controllers/QuoteController.js')
+
 const routes = new Router()
 
-routes.get('/', (req, res) => {
-  res.send('ola')
-})
+routes.post('/book', BookController.create)
+routes.get('/book', BookController.index)
 
-export default routes
+routes.post('/book/:book_id/quote', QuoteController.create)
+routes.get('/book/:book_id/quote', QuoteController.index)
+
+module.exports = routes
